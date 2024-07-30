@@ -4,7 +4,7 @@ import Carousel from "react-material-ui-carousel";
 import { Paper, Box } from "@mui/material";
 import Image from "next/image";
 import NavBar from "./NavBar";
-
+// comment
 const items = [
   {
     image: "/assets/restaurant1.jpg",
