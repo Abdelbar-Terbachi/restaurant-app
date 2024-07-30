@@ -1,0 +1,11 @@
+services:
+  client:
+    container_name: dev-client
+    build:
+      context: ../../client
+      dockerfile: Dockerfile.dev
+    restart: unless-stopped
+    volumes:
+      - ../../client/src/:/app/src/
+    ports:
+      - "3000:3000"
