@@ -8,69 +8,45 @@ import Typography from "@mui/material/Typography";
 export default function NavBar() {
   return (
     <AppBar
-      position="fixed" // Changed to fixed to ensure alignment
+      position="fixed" // Make the navbar sticky
       sx={{
-        background: "none",
-        boxShadow: "none",
-        zIndex: 2,
-        width: "100%",
+        backgroundColor: "black", // Set background to black
+        color: "gold", // Set text color to gold
+        boxShadow: "none", // Remove box shadow
+        width: "100%", // Full width
         top: 0,
         left: 0,
         margin: 0,
         padding: 0,
+        zIndex: 1200, // Ensure it stays on top
       }}
     >
       <Toolbar
         sx={{
           margin: 0,
           padding: 0,
+          display: "flex",
+          justifyContent: "space-between",
         }}
       >
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: 0,
-            padding: 0,
-          }}
-        >
-          <Box>
-            <Typography sx={{ color: "white" }} variant="h6" component="div">
-              Logo
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Notre Menu
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Reservation
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Galerie
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Contact
-            </Typography>
-          </Box>
+        <Box>
+          <Typography variant="h6" component="div">
+            Logo
+          </Typography>
+        </Box>
+        <Box sx={{ display: "flex", gap: 2 }}>
+          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
+            Notre Menu
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
+            Reservation
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
+            Galerie
+          </Typography>
+          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
+            Contact
+          </Typography>
         </Box>
       </Toolbar>
     </AppBar>
