@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
@@ -35,17 +36,53 @@ export default function NavBar() {
           </Typography>
         </Box>
         <Box sx={{ display: "flex", gap: 2 }}>
-          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
-            Notre Menu
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href={"/menu"}>Notre Menu</Link>
           </Typography>
-          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
-            Reservation
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href={"/reservation"}>Reservation</Link>
           </Typography>
-          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
-            Galerie
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href={"/galery"}>Galerie</Link>
           </Typography>
-          <Typography variant="h6" component="div" sx={{ cursor: "pointer" }}>
-            Contact
+          <Typography
+            variant="h6"
+            component="div"
+            sx={{
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href={"/contact"}>Contact</Link>
           </Typography>
         </Box>
       </Toolbar>
