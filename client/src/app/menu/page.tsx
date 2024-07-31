@@ -1,7 +1,15 @@
+import Footer from "@/components/home/Footer";
+import NavBar from "@/components/home/NavBar";
+import MenuList from "@/components/menu/MenuList";
 import React from "react";
 
 const page = () => {
-  return <div>about</div>;
+  return (
+    <>
+      <NavBar />
+      <MenuList />
+    </>
+  );
 };
 
 export default page;

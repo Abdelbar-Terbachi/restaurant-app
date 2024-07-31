@@ -6,7 +6,7 @@ const Footer = () => {
     <Box
       sx={{
         pt: "1rem",
-        position: "absolute",
+
         bottom: 0,
         bgcolor: "black",
         color: "gold",
