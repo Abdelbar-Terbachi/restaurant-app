@@ -1,7 +1,7 @@
 import React from "react";
 
-const SweetsList = () => {
+const DessertsList = () => {
   return <div>SweetsList</div>;
 };
 
-export default SweetsList;
+export default DessertsList;

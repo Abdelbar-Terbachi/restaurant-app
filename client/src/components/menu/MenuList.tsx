@@ -7,17 +7,24 @@ import {
   CardContent,
   Typography,
   Grid,
+  CardActions,
+  Button,
 } from "@mui/material";
+import Link from "next/link";
 
 const categories = [
-  { title: "Snacks", image: "/assets/plats.jpg" },
-  { title: "Boissons", image: "/assets/drinks.jpg" },
-  { title: "Petits Déjeuners", image: "/assets/breakfast.jpg" },
-  { title: "Desserts", image: "/assets/desserts.jpg" },
-  { title: "Salades", image: "/assets/salades.jpg" },
-  { title: "Déjeuner", image: "/assets/lunch.jpg" },
-  { title: "Entrées", image: "/assets/plats.jpg" },
-  { title: "Soupes", image: "/assets/soupes.jpg" },
+  { title: "Snacks", image: "/assets/plats.jpg", slug: "snacks" },
+  { title: "Boissons", image: "/assets/drinks.jpg", slug: "drinks" },
+  {
+    title: "Petits Déjeuners",
+    image: "/assets/breakfast.jpg",
+    slug: "breakfasts",
+  },
+  { title: "Desserts", image: "/assets/desserts.jpg", slug: "desserts" },
+  { title: "Salades", image: "/assets/salades.jpg", slug: "salades" },
+  { title: "Déjeuner", image: "/assets/lunch.jpg", slug: "lunchs" },
+  { title: "Entrées", image: "/assets/plats.jpg", slug: "appetizers" },
+  { title: "Soupes", image: "/assets/soupes.jpg", slug: "soups" },
 ];
 
 const MenuList = () => {
@@ -33,11 +40,33 @@ const MenuList = () => {
                 image={category.image}
                 alt={category.title}
               />
-              <CardContent>
-                <Typography variant="h5" component="div">
-                  {category.title}
-                </Typography>
-              </CardContent>
+              <Box
+                sx={{
+                  display: "flex",
+                  alignItems: "center",
+                  justifyContent: "space-between",
+                }}
+              >
+                <CardContent>
+                  <Typography variant="h5" component="div">
+                    {category.title}
+                  </Typography>
+                </CardContent>
+                <CardActions>
+                  <Button variant="outlined">
+                    <Typography
+                      sx={{
+                        "& a": {
+                          color: "black",
+                          textDecoration: "none",
+                        },
+                      }}
+                    >
+                      <Link href={`/menu/${category.slug}`}>Voire</Link>
+                    </Typography>
+                  </Button>
+                </CardActions>
+              </Box>
             </Card>
           </Grid>
         ))}
