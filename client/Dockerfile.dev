@@ -9,18 +9,9 @@ COPY package-lock.json ./
 # Install dependencies
 RUN npm install
 
-# Install SQLite3
-RUN apk add --no-cache sqlite
-
 # Copy the rest of your application code
 COPY . .
 
-# Ensure Prisma CLI is installed
-RUN npm install -g prisma
-
-# Run Prisma commands
-RUN npx prisma generate
-RUN npx prisma migrate dev --name init
 
 # Expose port and run the application
 EXPOSE 3000
