@@ -1,3 +1,5 @@
+version: "3.8"
+
 services:
   client:
     container_name: dev-client
@@ -7,5 +9,6 @@ services:
     restart: unless-stopped
     volumes:
       - ../../client/src/:/app/src/
+      - ../../data/sqlite:/app/data
     ports:
       - "3000:3000"
