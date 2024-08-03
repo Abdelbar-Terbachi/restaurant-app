@@ -1,91 +1,127 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Slide } from "@mui/material";
 
 export default function NavBar() {
-  return (
-    <AppBar
-      position="fixed" // Make the navbar sticky
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const toggleDrawer = (open: boolean) => (event: any) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const drawerList = (
+    <Box
       sx={{
-        backgroundColor: "black", // Set background to black
-        color: "gold", // Set text color to gold
-        boxShadow: "none", // Remove box shadow
-        width: "100%", // Full width
-        top: 0,
-        left: 0,
-        margin: 0,
-        padding: 0,
-        zIndex: 1200, // Ensure it stays on top
+        width: 250,
+        backgroundColor: "black",
+        height: "100%",
+        color: "gold",
       }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
     >
-      <Toolbar
+      <List>
+        {["Menu", "Reservation", "Galerie", "Contact"].map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            component={Link}
+            href={`/${text.toLowerCase().replace(" ", "")}`}
+          >
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+    </Box>
+  );
+
+  return (
+    <>
+      <AppBar
+        position="fixed"
         sx={{
+          backgroundColor: "black",
+          color: "gold",
+          boxShadow: "none",
+          width: "100%",
+          top: 0,
+          left: 0,
           margin: 0,
           padding: 0,
-          display: "flex",
-          justifyContent: "space-between",
+          zIndex: 1200,
         }}
       >
-        <Box>
-          <Typography variant="h6" component="div">
-            Logo
-          </Typography>
-        </Box>
-        <Box sx={{ display: "flex", gap: 2 }}>
-          <Typography
-            variant="h6"
-            component="div"
+        <Slide direction="down" in={true} mountOnEnter unmountOnExit>
+          <Toolbar
             sx={{
-              "& a": {
-                color: "gold",
-                textDecoration: "none",
-              },
+              display: "flex",
+              justifyContent: "space-between",
+              padding: isSmallScreen ? "0 1rem" : "0 2rem",
             }}
           >
-            <Link href={"/menu"}>Notre Menu</Link>
-          </Typography>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              "& a": {
-                color: "gold",
-                textDecoration: "none",
-              },
-            }}
-          >
-            <Link href={"/reservation"}>Reservation</Link>
-          </Typography>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              "& a": {
-                color: "gold",
-                textDecoration: "none",
-              },
-            }}
-          >
-            <Link href={"/galery"}>Galerie</Link>
-          </Typography>
-          <Typography
-            variant="h6"
-            component="div"
-            sx={{
-              "& a": {
-                color: "gold",
-                textDecoration: "none",
-              },
-            }}
-          >
-            <Link href={"/contact"}>Contact</Link>
-          </Typography>
-        </Box>
-      </Toolbar>
-    </AppBar>
+            <Box>
+              <Typography variant="h6" component="div">
+                Logo
+              </Typography>
+            </Box>
+            {isSmallScreen ? (
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box sx={{ display: "flex", gap: 2 }}>
+                {["Menu", "Reservation", "Galerie", "Contact"].map((text) => (
+                  <Typography
+                    key={text}
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      "& a": {
+                        color: "gold",
+                        textDecoration: "none",
+                      },
+                    }}
+                  >
+                    <Link href={`/${text.toLowerCase().replace(" ", "")}`}>
+                      {text}
+                    </Link>
+                  </Typography>
+                ))}
+              </Box>
+            )}
+          </Toolbar>
+        </Slide>
+      </AppBar>
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+        {drawerList}
+      </Drawer>
+    </>
   );
 }
