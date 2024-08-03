@@ -6,7 +6,7 @@ import LocationSVG from "../SVG/LocationSVG";
 
 const Informations = () => {
   return (
-    <Box sx={{ mt: "5rem", flexGrow: 1 }}>
+    <Box sx={{ mt: "5rem", flexGrow: 1, mb: 0, pb: "1rem" }}>
       <Card sx={{ width: "100%", borderRadius: "1rem" }}>
         <CardHeader
           title={

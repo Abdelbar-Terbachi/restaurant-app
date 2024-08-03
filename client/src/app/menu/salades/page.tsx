@@ -1,7 +1,15 @@
-import React from "react";
+import Footer from "@/components/home/Footer";
+import NavBar from "@/components/home/NavBar";
+import SaladesList from "@/components/menu/salades/SaladesList";
 
 const page = () => {
-  return <div>page</div>;
+  return (
+    <>
+      <NavBar />
+      <SaladesList />
+      <Footer />
+    </>
+  );
 };
 
 export default page;
