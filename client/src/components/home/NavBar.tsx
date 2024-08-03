@@ -14,6 +14,7 @@ import ListItemText from "@mui/material/ListItemText";
 import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Slide } from "@mui/material";
+import TulipSVG from "../SVG/TulipSVG";
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -82,9 +83,9 @@ export default function NavBar() {
             }}
           >
             <Box>
-              <Typography variant="h6" component="div">
-                Logo
-              </Typography>
+              <Link href="/">
+                <TulipSVG />
+              </Link>
             </Box>
             {isSmallScreen ? (
               <IconButton
