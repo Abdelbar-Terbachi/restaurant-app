@@ -9,6 +9,7 @@ import {
   useMediaQuery,
 } from "@mui/material";
 import React from "react";
+import TulipSVG from "../SVG/TulipSVG";
 
 const Footer = () => {
   const theme = useTheme();
@@ -28,14 +29,12 @@ const Footer = () => {
         justifyContent: "center",
         alignItems: "center",
         textAlign: "center",
-        flexDirection: isSmallScreen ? "column" : "row", // Adjust direction based on screen size
+        flexDirection: isSmallScreen ? "column" : "row",
       }}
     >
       <Grid container spacing={2}>
         <Grid item xs={12} sm={3} md={3}>
-          <Typography variant="h6" sx={{ color: "gold" }}>
-            Logo
-          </Typography>
+          <TulipSVG />
         </Grid>
         <Grid item xs={12} sm={3} md={3}>
           <Typography variant="h6" sx={{ color: "gold" }}>

@@ -1,12 +1,42 @@
-import { Box, Grid, Typography } from "@mui/material";
+"use client";
+import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
 import Image from "next/image";
 import React from "react";
 
 const MenuHighlightsComponent = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
-      <Typography sx={{ textAlign: "center", mb: "4rem" }} variant="h2">
-        Menu HightLights
+      <Typography
+        sx={{
+          textAlign: "center",
+          width: "60vw",
+          margin: "auto",
+          mb: "4rem",
+          padding: "1rem 2rem",
+          backgroundColor: "#fff",
+          backgroundImage: "url('/assets/bgs/scratch.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "0.5rem",
+          fontStyle: "italic",
+          color: "gold",
+        }}
+        variant={
+          isLargeScreen
+            ? "h2"
+            : isMediumScreen
+            ? "h3"
+            : isSmallScreen
+            ? "h5"
+            : "h2"
+        }
+      >
+        Menu Highlights
       </Typography>
       <Grid container spacing={3} width="75%" margin="auto" mb="5rem">
         {[

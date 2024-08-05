@@ -1,6 +1,14 @@
 "use client";
 import React from "react";
-import { Box, Card, CardContent, Typography, Rating } from "@mui/material";
+import {
+  Box,
+  Card,
+  CardContent,
+  Typography,
+  Rating,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Carousel from "react-material-ui-carousel";
 
 const reviews = [
@@ -39,9 +47,37 @@ const ReviewCard = ({
 );
 
 const ReviewsSection = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
-    <Box sx={{ mt: "4rem", width: "50%", margin: "auto" }}>
-      <Typography variant="h2" sx={{ textAlign: "center", mb: "4rem" }}>
+    <Box sx={{ mt: "4rem", width: "70%", margin: "auto" }}>
+      <Typography
+        variant={
+          isLargeScreen
+            ? "h2"
+            : isMediumScreen
+            ? "h3"
+            : isSmallScreen
+            ? "h5"
+            : "h2"
+        }
+        sx={{
+          textAlign: "center",
+          margin: "auto",
+          mb: "4rem",
+          padding: "3rem 5rem",
+          backgroundColor: "#fff",
+          backgroundImage: "url('/assets/bgs/scratch.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "0.5rem",
+          fontStyle: "italic",
+          color: "gold",
+        }}
+      >
         Customer Reviews
       </Typography>
       <Carousel

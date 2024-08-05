@@ -3,8 +3,10 @@ import { Box, Grid, TextField, Button } from "@mui/material";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import React from "react";
+import { usePathname } from "next/navigation";
 
 const ReservationForm = () => {
+  const pathname = usePathname();
   const validationSchema = yup.object({
     fullName: yup.string().min(5).required("Nom complet est obligatoire"),
     date: yup.date().required("La date est obligatoire"),
@@ -125,7 +127,7 @@ const ReservationForm = () => {
             type="submit"
             sx={{ mt: "1rem" }}
           >
-            Réserver
+            {pathname === "/contact" ? "Send" : "Réserver"}
           </Button>
         </Grid>
       </Grid>

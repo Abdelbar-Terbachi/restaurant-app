@@ -44,7 +44,7 @@ export default function NavBar() {
       onKeyDown={toggleDrawer(false)}
     >
       <List>
-        {["Menu", "Reservation", "Galerie", "Contact"].map((text, index) => (
+        {["Menu", "Reservation", "Galery", "Contact"].map((text, index) => (
           <ListItem
             button
             key={text}
@@ -98,7 +98,7 @@ export default function NavBar() {
               </IconButton>
             ) : (
               <Box sx={{ display: "flex", gap: 2 }}>
-                {["Menu", "Reservation", "Galerie", "Contact"].map((text) => (
+                {["Menu", "Reservation", "Galery", "Contact"].map((text) => (
                   <Typography
                     key={text}
                     variant="h6"
