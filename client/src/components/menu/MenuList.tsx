@@ -29,14 +29,16 @@ const categories = [
 
 const MenuList = () => {
   return (
-    <Box sx={{ flexGrow: 1, padding: 2, mt: "4rem" }}>
+    <Box sx={{ flexGrow: 1, padding: 2, mt: "5rem", mb: "5rem" }}>
       <Grid container spacing={3}>
         {categories.map((category, index) => (
           <Grid item xs={12} sm={6} md={4} key={index}>
-            <Card sx={{ borderRadius: "1rem" }}>
+            <Card
+              sx={{ borderRadius: "1rem", boxShadow: "5px 5px 5px 5px grey" }}
+            >
               <CardMedia
                 component="img"
-                height="140"
+                height="280"
                 image={category.image}
                 alt={category.title}
               />

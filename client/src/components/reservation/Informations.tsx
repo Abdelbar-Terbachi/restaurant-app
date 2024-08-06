@@ -17,11 +17,11 @@ const Informations = () => {
           subheader={
             <Box>
               <Typography variant="h5" marginBottom="1rem">
-                Réservez votre table en ligne
+                Book your table online
               </Typography>
               <Typography>
-                Nous sommes ouverts tous les jours de 12h30 à 01h00, sauf le
-                vendredi de 14h00 à 01h00.
+                We are open every day from 12:30 PM to 1:00 AM, except on
+                Fridays from 2:00 PM to 1:00 AM.
               </Typography>
             </Box>
           }
@@ -49,7 +49,7 @@ const Informations = () => {
                 <PhoneSVG />
               </Box>
               <Box>
-                <Typography>Applez Nous</Typography>
+                <Typography>Call Us</Typography>
                 <Typography>+212-8000000 | +212-8000000</Typography>
               </Box>
             </Box>
@@ -58,9 +58,9 @@ const Informations = () => {
                 <LocationSVG />{" "}
               </Box>
               <Box>
-                <Typography>Rendez nous visite</Typography>
+                <Typography>Visit Us</Typography>
                 <Typography>
-                  109 Avenue xxx xxx Riad Tétouane, Tanger 9000
+                  109 Avenue xxx xxx Riad Tetouan, Tangier 9000
                 </Typography>
               </Box>
             </Box>

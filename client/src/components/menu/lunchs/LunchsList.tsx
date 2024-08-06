@@ -10,52 +10,52 @@ const LunchsList = () => {
     {
       name: "Grilled Chicken Sandwich",
       description: "Chicken sandwich with veggies",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Beef Burger",
       description: "Juicy beef burger with fries",
-      price: 9.0,
+      price: 90,
     },
     {
       name: "Vegetable Stir-Fry",
       description: "Stir-fried vegetables with rice",
-      price: 8.5,
+      price: 85,
     },
     {
       name: "Pasta Bolognese",
       description: "Pasta with rich meat sauce",
-      price: 10.0,
+      price: 100,
     },
     {
       name: "Fish Tacos",
       description: "Tacos with grilled fish",
-      price: 8.5,
+      price: 85,
     },
     {
       name: "Chicken Curry",
       description: "Spicy chicken curry with rice",
-      price: 9.5,
+      price: 95,
     },
     {
       name: "BBQ Ribs",
       description: "Tender BBQ ribs with sides",
-      price: 11.0,
+      price: 110,
     },
     {
       name: "VegetableSoup",
       description: "Hearty vegetable soup",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Chickens Caesar Wrap",
       description: "Wrap with chicken Caesar salad",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Cheeseburger",
       description: "Classic cheeseburger with lettuce",
-      price: 9.0,
+      price: 90,
     },
   ];
 
@@ -91,7 +91,7 @@ const LunchsList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

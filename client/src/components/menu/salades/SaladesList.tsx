@@ -10,52 +10,52 @@ const SaladesList = () => {
     {
       name: "Caesar Salad",
       description: "Classic Caesar salad",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Greek Salad",
       description: "Salad with feta and olives",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Cobb Salad",
       description: "Salad with chicken and bacon",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Caprese Salad",
       description: "Tomato, mozzarella, and basil",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Waldorf Salad",
       description: "Salad with apples and walnuts",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Quinoa Salad",
       description: "Healthy quinoa salad",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Spinach Salad",
       description: "Spinach with berries and nuts",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Avocado Salad",
       description: "Salad with avocado and tomatoes",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Asian Salad",
       description: "Salad with sesame dressing",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Chickpea Salad",
       description: "Salad with chickpeas and vegetables",
-      price: 6.0,
+      price: 60,
     },
   ];
 
@@ -65,9 +65,9 @@ const SaladesList = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   const getGridColumns = () => {
-    if (isMobile) return 12; // 1 column
-    if (isTablet) return 6; // 2 columns
-    if (isDesktop) return 4; // 3 columns
+    if (isMobile) return 12;
+    if (isTablet) return 6;
+    if (isDesktop) return 4;
   };
 
   return (
@@ -77,7 +77,7 @@ const SaladesList = () => {
           <Card>
             <CardMedia
               component="img"
-              height="140"
+              height="280"
               image={`/assets/salades/${
                 item.name.toLowerCase().split(" ")[0]
               }.jpg`}
@@ -91,7 +91,7 @@ const SaladesList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

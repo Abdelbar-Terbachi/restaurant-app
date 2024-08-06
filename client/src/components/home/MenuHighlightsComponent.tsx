@@ -1,12 +1,52 @@
-import { Box, Grid, Typography } from "@mui/material";
+"use client";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import GotoSVG from "../SVG/GotoSVG";
+import Link from "next/link";
 
 const MenuHighlightsComponent = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <>
-      <Typography sx={{ textAlign: "center", mb: "4rem" }} variant="h2">
-        Menu HightLights
+      <Typography
+        sx={{
+          textAlign: "center",
+          width: "60vw",
+          margin: "auto",
+          mb: "4rem",
+          padding: "1rem 2rem",
+          backgroundColor: "#fff",
+          fontWeight: "bold",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "0.5rem",
+          fontStyle: "italic",
+          color: "black",
+        }}
+        variant={
+          isLargeScreen
+            ? "h2"
+            : isMediumScreen
+            ? "h3"
+            : isSmallScreen
+            ? "h5"
+            : "h2"
+        }
+      >
+        Menu Highlights
       </Typography>
       <Grid container spacing={3} width="75%" margin="auto" mb="5rem">
         {[
@@ -24,11 +64,32 @@ const MenuHighlightsComponent = () => {
                 layout="fill"
                 objectFit="cover"
                 alt={item.title}
+                style={{
+                  borderRadius: "1rem",
+                  boxShadow: "5px 5px 5px 5px grey",
+                }}
               />
             </Box>
           </Grid>
         ))}
       </Grid>
+      <Box sx={{ textAlign: "center" }}>
+        <Button variant="contained" sx={{ bgcolor: "black" }}>
+          <Typography
+            color="gold"
+            sx={{
+              mr: "1rem",
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href="/menu">Go to Menu</Link>
+          </Typography>
+          <GotoSVG />
+        </Button>
+      </Box>
     </>
   );
 };

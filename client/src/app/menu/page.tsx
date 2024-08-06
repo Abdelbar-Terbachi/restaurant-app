@@ -8,6 +8,7 @@ const page = () => {
     <>
       <NavBar />
       <MenuList />
+      <Footer />
     </>
   );
 };

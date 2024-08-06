@@ -10,52 +10,52 @@ const DrinksList = () => {
     {
       name: "Avocado",
       description: "Freshly squeezed avocado juice",
-      price: 2.5,
+      price: 25,
     },
     {
       name: "Orange Juice",
       description: "Freshly squeezed orange juice",
-      price: 3.0,
+      price: 30,
     },
     {
       name: "Lemonade",
       description: "Refreshing lemonade",
-      price: 2.8,
+      price: 28,
     },
     {
       name: "Iced Tea",
       description: "Cold brewed iced tea",
-      price: 2.7,
+      price: 27,
     },
     {
       name: "Coffee",
       description: "Freshly brewed coffee",
-      price: 3.5,
+      price: 35,
     },
     {
       name: "Hot Chocolate",
       description: "Rich hot chocolate",
-      price: 3.8,
+      price: 38,
     },
     {
       name: "Mineral Water",
       description: "Sparkling mineral water",
-      price: 2.0,
+      price: 20,
     },
     {
       name: "Milkshake",
       description: "Chocolate milkshake",
-      price: 4.0,
+      price: 40,
     },
     {
       name: "Panache",
       description: "Freshly squeezed panache juice",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Strawberies",
       description: "Freshly squeezed strawberies juice",
-      price: 5.0,
+      price: 50,
     },
   ];
 
@@ -65,9 +65,9 @@ const DrinksList = () => {
   const isDesktop = useMediaQuery(theme.breakpoints.up("md"));
 
   const getGridColumns = () => {
-    if (isMobile) return 12; // 1 column
-    if (isTablet) return 6; // 2 columns
-    if (isDesktop) return 4; // 3 columns
+    if (isMobile) return 12;
+    if (isTablet) return 6;
+    if (isDesktop) return 4;
   };
 
   return (
@@ -77,7 +77,7 @@ const DrinksList = () => {
           <Card>
             <CardMedia
               component="img"
-              height="140"
+              height="280"
               image={`/assets/drinks/${
                 item.name.toLowerCase().split(" ")[0]
               }.jpg`}
@@ -91,7 +91,7 @@ const DrinksList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

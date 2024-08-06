@@ -10,52 +10,52 @@ const SnacksList = () => {
     {
       name: "Cheese Sticks",
       description: "Crispy cheese sticks",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Nachos",
       description: "Tortilla chips with cheese",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Spring Rolls",
       description: "Vegetable spring rolls",
-      price: 5.5,
+      price: 55,
     },
     {
       name: "Onion Rings",
       description: "Crispy onion rings",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Chicken Wings",
       description: "Spicy chicken wings",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Garlic Bread",
       description: "Toasted garlic bread",
-      price: 3.5,
+      price: 35,
     },
     {
       name: "Quesadilla",
       description: "Cheese quesadilla",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Potato Wedges",
       description: "Seasoned potato wedges",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Stuffed Mushrooms",
       description: "Mushrooms stuffed with cheese",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Bruschetta",
       description: "Tomato and basil bruschetta",
-      price: 5.5,
+      price: 55,
     },
   ]);
 
@@ -91,7 +91,7 @@ const SnacksList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>
