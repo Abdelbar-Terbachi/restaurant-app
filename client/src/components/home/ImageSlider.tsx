@@ -3,7 +3,7 @@ import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Box } from "@mui/material";
 import Image from "next/image";
-import NavBar from "./NavBar";
+import TypingText from "./TypingText";
 
 const items = [
   {
@@ -23,17 +23,14 @@ const ImageSlider = () => {
         width: "100vw",
         height: "100vh",
         overflow: "hidden",
-        margin: 0,
-        padding: 0,
         position: "relative",
-        top: 0,
+        marginTop: "64px",
       }}
     >
-      <NavBar />
       <Carousel
-        sx={{ width: "100vw", height: "100vh", margin: 0, padding: 0 }}
+        sx={{ width: "100vw", height: "100vh" }}
         indicators={false}
-        autoPlay={false}
+        autoPlay={true}
       >
         {items.map((item, index) => (
           <Paper
@@ -43,12 +40,10 @@ const ImageSlider = () => {
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              width: "100vw",
+              width: "90vw",
               height: "100vh",
               backgroundColor: "transparent",
               boxShadow: "none",
-              margin: 0,
-              padding: 0,
             }}
           >
             <Box
@@ -58,7 +53,6 @@ const ImageSlider = () => {
                 left: 0,
                 width: "100vw",
                 height: "100vh",
-                zIndex: -1,
                 overflow: "hidden",
               }}
             >
@@ -67,9 +61,21 @@ const ImageSlider = () => {
                 alt={`Slide ${index + 1}`}
                 layout="fill"
                 objectFit="cover"
-                objectPosition="top center"
+                objectPosition="center"
                 quality={100}
               />
+            </Box>
+            <Box
+              sx={{
+                position: "absolute",
+                top: "50%",
+                left: "50%",
+                transform: "translate(-50%, -50%)",
+                textAlign: "center",
+                pointerEvents: "none",
+              }}
+            >
+              <TypingText />
             </Box>
           </Paper>
         ))}

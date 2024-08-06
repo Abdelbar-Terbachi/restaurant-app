@@ -1,78 +1,133 @@
 "use client";
-import React from "react";
+import React, { useState } from "react";
+import Link from "next/link";
 import AppBar from "@mui/material/AppBar";
 import Box from "@mui/material/Box";
 import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
+import IconButton from "@mui/material/IconButton";
+import MenuIcon from "@mui/icons-material/Menu";
+import Drawer from "@mui/material/Drawer";
+import List from "@mui/material/List";
+import ListItem from "@mui/material/ListItem";
+import ListItemText from "@mui/material/ListItemText";
+import { useTheme } from "@mui/material/styles";
+import useMediaQuery from "@mui/material/useMediaQuery";
+import { Slide } from "@mui/material";
+import TulipSVG from "../SVG/TulipSVG";
+import SocialComponent from "./SocialComponent";
 
 export default function NavBar() {
-  return (
-    <AppBar
-      position="fixed" // Changed to fixed to ensure alignment
+  const [drawerOpen, setDrawerOpen] = useState(false);
+  const theme = useTheme();
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("md"));
+
+  const toggleDrawer = (open: boolean) => (event: any) => {
+    if (
+      event.type === "keydown" &&
+      (event.key === "Tab" || event.key === "Shift")
+    ) {
+      return;
+    }
+    setDrawerOpen(open);
+  };
+
+  const drawerList = (
+    <Box
       sx={{
-        background: "none",
-        boxShadow: "none",
-        zIndex: 2,
-        width: "100%",
-        top: 0,
-        left: 0,
-        margin: 0,
-        padding: 0,
+        width: 250,
+        backgroundColor: "black",
+        height: "100%",
+        color: "gold",
       }}
+      role="presentation"
+      onClick={toggleDrawer(false)}
+      onKeyDown={toggleDrawer(false)}
     >
-      <Toolbar
+      <Box sx={{ textAlign: "center" }}>
+        <TulipSVG />
+      </Box>
+      <List>
+        {["Menu", "Reservation", "Gallery", "Contact"].map((text, index) => (
+          <ListItem
+            button
+            key={text}
+            component={Link}
+            href={`/${text.toLowerCase().replace(" ", "")}`}
+          >
+            <ListItemText primary={text} />
+          </ListItem>
+        ))}
+      </List>
+      <SocialComponent />
+    </Box>
+  );
+
+  return (
+    <>
+      <AppBar
+        position="fixed"
         sx={{
+          backgroundColor: "black",
+          color: "gold",
+          boxShadow: "none",
+          width: "100%",
+          top: 0,
+          left: 0,
           margin: 0,
           padding: 0,
+          zIndex: 1200,
         }}
       >
-        <Box
-          sx={{
-            flexGrow: 1,
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            margin: 0,
-            padding: 0,
-          }}
-        >
-          <Box>
-            <Typography sx={{ color: "white" }} variant="h6" component="div">
-              Logo
-            </Typography>
-          </Box>
-          <Box sx={{ display: "flex", gap: 2 }}>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Notre Menu
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Reservation
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Galerie
-            </Typography>
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{ color: "white", cursor: "pointer" }}
-            >
-              Contact
-            </Typography>
-          </Box>
-        </Box>
-      </Toolbar>
-    </AppBar>
+        <Slide direction="down" in={true} mountOnEnter unmountOnExit>
+          <Toolbar
+            sx={{
+              display: "flex",
+              justifyContent: "space-between",
+              padding: isSmallScreen ? "0 1rem" : "0 2rem",
+            }}
+          >
+            <Box>
+              <Link href="/">
+                <TulipSVG />
+              </Link>
+            </Box>
+            {isSmallScreen ? (
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={toggleDrawer(true)}
+              >
+                <MenuIcon />
+              </IconButton>
+            ) : (
+              <Box sx={{ display: "flex", gap: 2 }}>
+                {["Menu", "Reservation", "Gallery", "Contact"].map((text) => (
+                  <Typography
+                    key={text}
+                    variant="h6"
+                    component="div"
+                    sx={{
+                      "& a": {
+                        color: "gold",
+                        textDecoration: "none",
+                      },
+                    }}
+                  >
+                    <Link href={`/${text.toLowerCase().replace(" ", "")}`}>
+                      {text}
+                    </Link>
+                  </Typography>
+                ))}
+              </Box>
+            )}
+          </Toolbar>
+        </Slide>
+      </AppBar>
+      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+        {drawerList}
+      </Drawer>
+    </>
   );
 }

@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -H 0.0.0.0 -p 10000",
     "build": "next build",
     "start": "next start",
     "lint": "next lint"
@@ -12,22 +12,33 @@
     "@emotion/cache": "^11.13.1",
     "@emotion/react": "^11.13.0",
     "@emotion/styled": "^11.13.0",
+    "@formatjs/intl-localematcher": "^0.5.4",
     "@mui/icons-material": "^5.16.5",
     "@mui/material": "^5.16.5",
     "@mui/material-nextjs": "^5.16.4",
+    "@prisma/client": "^5.17.0",
     "@types/swiper": "^6.0.0",
+    "@vis.gl/react-google-maps": "^1.1.0",
+    "formik": "^2.4.6",
+    "negotiator": "^0.6.3",
     "next": "14.2.5",
+    "next-intl": "^3.17.2",
     "react": "^18",
     "react-dom": "^18",
     "react-material-ui-carousel": "^3.4.2",
-    "swiper": "^11.1.8"
+    "react-type-animation": "^3.2.0",
+    "sqlite3": "^5.1.7",
+    "swiper": "^11.1.8",
+    "ts-node": "^10.9.2",
+    "yup": "^1.4.0"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/negotiator": "^0.6.3",
+    "@types/node": "^20.14.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
     "eslint-config-next": "14.2.5",
-    "typescript": "^5"
+    "typescript": "^5.5.4"
   }
 }

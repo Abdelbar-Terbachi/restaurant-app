@@ -1,7 +1,8 @@
-import type { Metadata } from "next";
-import { Inter } from "next/font/google";
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
+import type { Metadata } from "next";
+import { getMessages } from "next-intl/server";
+import { Inter } from "next/font/google";
 
 import theme from "@/theme";
 
@@ -13,14 +14,16 @@ export const metadata: Metadata = {
     "Black Tulip is a modern new and opne of the top restaurants in Morocco, Tangier Located in The Medina Avenue Youssef Ibn Tachfine",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
   return (
     <html lang="en">
-      <body>
+      <body
+        style={{ margin: 0, padding: 0, height: "100vh", overflowX: "hidden" }}
+      >
         <AppRouterCacheProvider>
           <ThemeProvider theme={theme}>{children}</ThemeProvider>
         </AppRouterCacheProvider>
