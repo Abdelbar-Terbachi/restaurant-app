@@ -10,52 +10,52 @@ const SoupsList = () => {
     {
       name: "Tomato Soup",
       description: "Creamy tomato soup with basil",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Minestrone",
       description: "Italian vegetable soup with pasta",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Chicken Noodle Soup",
       description: "Classic chicken noodle soup",
-      price: 5.5,
+      price: 55,
     },
     {
       name: "French Onion Soup",
       description: "Onion soup with cheese and croutons",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Clam Chowder",
       description: "Creamy clam chowder with potatoes",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Lentil Soup",
       description: "Hearty lentil soup with vegetables",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Miso Soup",
       description: "Traditional Japanese miso soup",
-      price: 4.0,
+      price: 40,
     },
     {
       name: "Pumpkin Soup",
       description: "Smooth pumpkin soup with spices",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Gazpacho",
       description: "Chilled tomato and vegetable soup",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Seafood Bisque",
       description: "Rich seafood bisque",
-      price: 7.0,
+      price: 70,
     },
   ];
 
@@ -77,7 +77,7 @@ const SoupsList = () => {
           <Card>
             <CardMedia
               component="img"
-              height="140"
+              height="280"
               image={`/assets/soupes/${item.name
                 .split(" ")[0]
                 .toLowerCase()}.jpg`} // Use the first word of the name
@@ -91,7 +91,7 @@ const SoupsList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

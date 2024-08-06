@@ -10,52 +10,52 @@ const BreakfastsList = () => {
     {
       name: "Pancakes",
       description: "Fluffy pancakes with syrup",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Waffles",
       description: "Crispy waffles with toppings",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "French Toast",
       description: "Classic French toast with butter",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Omelette",
       description: "Egg omelette with your choice of fillings",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Avocado Toast",
       description: "Toasted bread with avocado spread",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Smoothie Bowl",
       description: "Healthy smoothie bowl with toppings",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Breakfast Burrito",
       description: "Burrito filled with eggs, bacon, and cheese",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Bagel with Lox",
       description: "Bagel with smoked salmon and cream cheese",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Yogurt Parfait",
       description: "Yogurt layered with granola and fruit",
-      price: 5.5,
+      price: 55,
     },
     {
       name: "Eggs Benedict",
       description: "Poached eggs on English muffin with hollandaise sauce",
-      price: 8.5,
+      price: 85,
     },
   ];
 
@@ -91,7 +91,7 @@ const BreakfastsList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

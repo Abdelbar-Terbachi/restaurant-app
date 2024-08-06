@@ -10,52 +10,52 @@ const AppetizersList = () => {
     {
       name: "Stuffed Mushrooms",
       description: "Mushrooms filled with cheese",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Bruschetta",
       description: "Tomato and basil bruschetta",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Spring Rolls",
       description: "Vegetable spring rolls",
-      price: 5.5,
+      price: 55,
     },
     {
       name: "Chicken Skewers",
       description: "Grilled chicken skewers",
-      price: 7.5,
+      price: 75,
     },
     {
       name: "Prawn Cocktail",
       description: "Prawns with cocktail sauce",
-      price: 8.0,
+      price: 80,
     },
     {
       name: "Queso Fundido",
       description: "Melted cheese with chorizo",
-      price: 7.0,
+      price: 70,
     },
     {
       name: "Crab Cakes",
       description: "Golden crab cakes with sauce",
-      price: 9.0,
+      price: 90,
     },
     {
       name: "Mozzarella Sticks",
       description: "Fried mozzarella sticks",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Guacamole & Chips",
       description: "Fresh guacamole with chips",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Calamari",
       description: "Fried calamari with sauce",
-      price: 8.5,
+      price: 85,
     },
   ];
 
@@ -91,7 +91,7 @@ const AppetizersList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

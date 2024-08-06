@@ -15,6 +15,7 @@ import { useTheme } from "@mui/material/styles";
 import useMediaQuery from "@mui/material/useMediaQuery";
 import { Slide } from "@mui/material";
 import TulipSVG from "../SVG/TulipSVG";
+import SocialComponent from "./SocialComponent";
 
 export default function NavBar() {
   const [drawerOpen, setDrawerOpen] = useState(false);
@@ -43,8 +44,11 @@ export default function NavBar() {
       onClick={toggleDrawer(false)}
       onKeyDown={toggleDrawer(false)}
     >
+      <Box sx={{ textAlign: "center" }}>
+        <TulipSVG />
+      </Box>
       <List>
-        {["Menu", "Reservation", "Galery", "Contact"].map((text, index) => (
+        {["Menu", "Reservation", "Gallery", "Contact"].map((text, index) => (
           <ListItem
             button
             key={text}
@@ -55,6 +59,7 @@ export default function NavBar() {
           </ListItem>
         ))}
       </List>
+      <SocialComponent />
     </Box>
   );
 
@@ -98,7 +103,7 @@ export default function NavBar() {
               </IconButton>
             ) : (
               <Box sx={{ display: "flex", gap: 2 }}>
-                {["Menu", "Reservation", "Galery", "Contact"].map((text) => (
+                {["Menu", "Reservation", "Gallery", "Contact"].map((text) => (
                   <Typography
                     key={text}
                     variant="h6"

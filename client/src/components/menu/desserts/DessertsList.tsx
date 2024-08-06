@@ -10,52 +10,52 @@ const DessertsList = () => {
     {
       name: "Chocolate Cake",
       description: "Rich chocolate cake",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Cheesecake",
       description: "Classic cheesecake",
-      price: 6.5,
+      price: 65,
     },
     {
       name: "Apple Pie",
       description: "Homemade apple pie",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Tiramisu",
       description: "Classic Italian tiramisu",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Brownies",
       description: "Fudgy brownies",
-      price: 4.0,
+      price: 40,
     },
     {
       name: "Panna Cotta",
       description: "Vanilla panna cotta",
-      price: 5.5,
+      price: 55,
     },
     {
       name: "Ice Cream Sundae",
       description: "Sundae with toppings",
-      price: 5.0,
+      price: 50,
     },
     {
       name: "Crème Brûlée",
       description: "Creamy crème brûlée",
-      price: 6.0,
+      price: 60,
     },
     {
       name: "Lemon Tart",
       description: "Tangy lemon tart",
-      price: 4.5,
+      price: 45,
     },
     {
       name: "Fruit Salad",
       description: "Fresh fruit salad",
-      price: 4.0,
+      price: 40,
     },
   ];
 
@@ -91,7 +91,7 @@ const DessertsList = () => {
                 {item.description}
               </Typography>
               <Typography variant="body1" color="text.primary">
-                ${item.price.toFixed(2)}
+                {item.price.toFixed(2)} MAD
               </Typography>
             </CardContent>
           </Card>

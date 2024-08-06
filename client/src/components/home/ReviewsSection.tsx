@@ -35,11 +35,22 @@ const ReviewCard = ({
 }: {
   review: { name: string; rating: number; comment: string };
 }) => (
-  <Card sx={{ maxWidth: 345, mx: "auto" }}>
+  <Card
+    sx={{
+      maxWidth: 345,
+      mx: "auto",
+      bgcolor: "black",
+      display: "flex",
+      flexDirection: "column",
+      textAlign: "center",
+    }}
+  >
     <CardContent>
-      <Typography variant="h6">{review.name}</Typography>
+      <Typography variant="h6" color="gold">
+        {review.name}
+      </Typography>
       <Rating value={review.rating} precision={0.5} readOnly />
-      <Typography variant="body2" color="textSecondary">
+      <Typography variant="body2" color="white">
         {review.comment}
       </Typography>
     </CardContent>
@@ -67,15 +78,14 @@ const ReviewsSection = () => {
         sx={{
           textAlign: "center",
           margin: "auto",
-          mb: "4rem",
           padding: "3rem 5rem",
           backgroundColor: "#fff",
-          backgroundImage: "url('/assets/bgs/scratch.png')",
+          fontWeight: "bold",
           backgroundSize: "cover",
           backgroundPosition: "center",
           borderRadius: "0.5rem",
           fontStyle: "italic",
-          color: "gold",
+          color: "black",
         }}
       >
         Customer Reviews
@@ -84,7 +94,7 @@ const ReviewsSection = () => {
         autoPlay
         interval={5000}
         indicators={false}
-        navButtonsAlwaysVisible
+        navButtonsAlwaysVisible={isLargeScreen || isMediumScreen}
         animation="slide"
       >
         {reviews.map((review, index) => (

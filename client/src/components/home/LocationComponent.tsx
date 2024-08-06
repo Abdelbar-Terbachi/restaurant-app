@@ -22,12 +22,13 @@ const LocationComponent = () => {
             mb: "4rem",
             padding: "1rem 2rem",
             backgroundColor: "#fff",
-            backgroundImage: "url('/assets/bgs/scratch.png')",
+
             backgroundSize: "cover",
             backgroundPosition: "center",
             borderRadius: "0.5rem",
             fontStyle: "italic",
-            color: "gold",
+            fontWeight: "bold",
+            color: "black",
           }}
           variant={
             isLargeScreen
@@ -39,7 +40,7 @@ const LocationComponent = () => {
               : "h2"
           }
         >
-          Où nous trouvez ?
+          Our Location
         </Typography>
       </Box>
       <iframe

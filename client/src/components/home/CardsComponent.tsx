@@ -1,10 +1,24 @@
-import { Box, Card, CardContent, Grid, Typography } from "@mui/material";
+"use client";
+import {
+  Box,
+  Card,
+  CardContent,
+  Grid,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import React from "react";
 import ServiceSVG from "../SVG/ServiceSVG"; // Custom SVG for service
 import AtmosphereSVG from "../SVG/AtmosphereSVG"; // Custom SVG for atmosphere
 import TeamSVG from "../SVG/TeamSVG"; // Custom SVG for staff
 
 const CardsComponent = () => {
+  const theme = useTheme();
+  const isLargeScreen = useMediaQuery(theme.breakpoints.up("lg"));
+  const isMediumScreen = useMediaQuery(theme.breakpoints.between("sm", "lg"));
+  const isSmallScreen = useMediaQuery(theme.breakpoints.down("sm"));
+
   return (
     <Box
       sx={{
@@ -13,6 +27,31 @@ const CardsComponent = () => {
         px: 2, // Add some padding on the sides
       }}
     >
+      <Typography
+        variant={
+          isLargeScreen
+            ? "h2"
+            : isMediumScreen
+            ? "h3"
+            : isSmallScreen
+            ? "h5"
+            : "h2"
+        }
+        sx={{
+          textAlign: "center",
+          margin: "auto",
+          padding: "3rem 5rem",
+          backgroundColor: "#fff",
+          fontWeight: "bold",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          borderRadius: "0.5rem",
+          fontStyle: "italic",
+          color: "black",
+        }}
+      >
+        Why Black Tulip?
+      </Typography>
       <Grid container spacing={2} justifyContent="center">
         {[1, 2, 3].map((item) => (
           <Grid item xs={12} sm={6} md={4} key={item}>

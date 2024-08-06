@@ -1,7 +1,17 @@
 "use client";
-import { Box, Grid, Typography, useMediaQuery, useTheme } from "@mui/material";
+import {
+  Box,
+  Button,
+  Grid,
+  IconButton,
+  Typography,
+  useMediaQuery,
+  useTheme,
+} from "@mui/material";
 import Image from "next/image";
 import React from "react";
+import GotoSVG from "../SVG/GotoSVG";
+import Link from "next/link";
 
 const MenuHighlightsComponent = () => {
   const theme = useTheme();
@@ -19,12 +29,12 @@ const MenuHighlightsComponent = () => {
           mb: "4rem",
           padding: "1rem 2rem",
           backgroundColor: "#fff",
-          backgroundImage: "url('/assets/bgs/scratch.png')",
+          fontWeight: "bold",
           backgroundSize: "cover",
           backgroundPosition: "center",
           borderRadius: "0.5rem",
           fontStyle: "italic",
-          color: "gold",
+          color: "black",
         }}
         variant={
           isLargeScreen
@@ -54,11 +64,32 @@ const MenuHighlightsComponent = () => {
                 layout="fill"
                 objectFit="cover"
                 alt={item.title}
+                style={{
+                  borderRadius: "1rem",
+                  boxShadow: "5px 5px 5px 5px grey",
+                }}
               />
             </Box>
           </Grid>
         ))}
       </Grid>
+      <Box sx={{ textAlign: "center" }}>
+        <Button variant="contained" sx={{ bgcolor: "black" }}>
+          <Typography
+            color="gold"
+            sx={{
+              mr: "1rem",
+              "& a": {
+                color: "gold",
+                textDecoration: "none",
+              },
+            }}
+          >
+            <Link href="/menu">Go to Menu</Link>
+          </Typography>
+          <GotoSVG />
+        </Button>
+      </Box>
     </>
   );
 };
