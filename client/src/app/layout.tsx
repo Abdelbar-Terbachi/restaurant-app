@@ -6,7 +6,7 @@ import theme from "@/theme";
 export const metadata: Metadata = {
   title: "Black Tulip",
   description:
-    "Black Tulip is a modern new and opne of the top restaurants in Morocco, Tangier Located in The Medina Avenue Youssef Ibn Tachfine",
+    "Black Tulip is a contemporary gem and one of Tangier's premier dining destinations. Nestled in the vibrant Medina on Avenue Youssef Ibn Tachfine, it offers an unparalleled culinary experience in a stunning setting.",
 };
 
 export default async function RootLayout({
