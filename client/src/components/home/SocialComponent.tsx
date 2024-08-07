@@ -29,7 +29,7 @@ const SocialComponent = () => {
       </IconButton>
       <IconButton
         onClick={() =>
-          handleRedirect("https://www.instagram.com/black.tulip.tanger")
+          handleRedirect("https://www.instagram.com/blacktulipcafe/")
         }
         aria-label="Instagram"
       >
