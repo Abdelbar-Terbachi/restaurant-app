@@ -14,17 +14,17 @@ import Link from "next/link";
 
 const categories = [
   { title: "Snacks", image: "/assets/plats.jpg", slug: "snacks" },
-  { title: "Boissons", image: "/assets/drinks.jpg", slug: "drinks" },
+  { title: "Drinks", image: "/assets/drinks.jpg", slug: "drinks" },
   {
-    title: "Petits Déjeuners",
+    title: "Breakfasts",
     image: "/assets/breakfast.jpg",
     slug: "breakfasts",
   },
   { title: "Desserts", image: "/assets/desserts.jpg", slug: "desserts" },
-  { title: "Salades", image: "/assets/salades.jpg", slug: "salades" },
-  { title: "Déjeuner", image: "/assets/lunch.jpg", slug: "lunchs" },
-  { title: "Entrées", image: "/assets/plats.jpg", slug: "appetizers" },
-  { title: "Soupes", image: "/assets/soupes.jpg", slug: "soups" },
+  { title: "Salads", image: "/assets/salades.jpg", slug: "salades" },
+  { title: "Lunchs", image: "/assets/lunch.jpg", slug: "lunchs" },
+  { title: "Appetizers", image: "/assets/plats.jpg", slug: "appetizers" },
+  { title: "Soups", image: "/assets/soupes.jpg", slug: "soups" },
 ];
 
 const MenuList = () => {
@@ -64,7 +64,7 @@ const MenuList = () => {
                         },
                       }}
                     >
-                      <Link href={`/menu/${category.slug}`}>Voire</Link>
+                      <Link href={`/menu/${category.slug}`}>Go</Link>
                     </Typography>
                   </Button>
                 </CardActions>

@@ -8,7 +8,7 @@ import {
   useMediaQuery,
   useTheme,
 } from "@mui/material";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import React from "react";
 import GotoSVG from "../SVG/GotoSVG";
 import Link from "next/link";
@@ -68,6 +68,7 @@ const MenuHighlightsComponent = () => {
                   borderRadius: "1rem",
                   boxShadow: "5px 5px 5px 5px grey",
                 }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </Box>
           </Grid>
