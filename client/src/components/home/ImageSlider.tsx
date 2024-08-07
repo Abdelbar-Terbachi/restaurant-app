@@ -2,7 +2,7 @@
 import React from "react";
 import Carousel from "react-material-ui-carousel";
 import { Paper, Box } from "@mui/material";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import TypingText from "./TypingText";
 
 const items = [
@@ -63,6 +63,8 @@ const ImageSlider = () => {
                 objectFit="cover"
                 objectPosition="center"
                 quality={100}
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </Box>
             <Box

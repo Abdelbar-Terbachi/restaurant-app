@@ -11,29 +11,29 @@ const ServiceSVG = () => {
         xmlnsXlink="http://www.w3.org/1999/xlink"
         fill="#ffd600"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           {" "}
           <title></title>{" "}
           <g
             fill="none"
-            fill-rule="evenodd"
+            fillRule="evenodd"
             id="页面-1"
             stroke="none"
-            stroke-linecap="round"
-            stroke-linejoin="round"
-            stroke-width="1"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+            strokeWidth="1"
           >
             {" "}
             <g
               id="导航图标"
               stroke="#ffd600"
-              stroke-width="1.5"
+              strokeWidth="1.5"
               transform="translate(-329.000000, -334.000000)"
             >
               {" "}

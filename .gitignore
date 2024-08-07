@@ -161,4 +161,4 @@ web-build/
 .DS_Store
 .env
 
-*/build
+*/build.next/

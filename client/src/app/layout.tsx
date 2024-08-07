@@ -1,12 +1,7 @@
 import { ThemeProvider } from "@mui/material";
 import { AppRouterCacheProvider } from "@mui/material-nextjs/v13-appRouter";
 import type { Metadata } from "next";
-import { getMessages } from "next-intl/server";
-import { Inter } from "next/font/google";
-
 import theme from "@/theme";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Black Tulip",
