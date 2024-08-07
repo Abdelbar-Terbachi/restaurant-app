@@ -13,7 +13,7 @@ const TulipSVG = () => {
         y="0px"
         width="100%"
         viewBox="0 0 1034 1014"
-        enable-background="new 0 0 1034 1014"
+        enableBackground="new 0 0 1034 1014"
         xmlSpace="preserve"
       >
         <path

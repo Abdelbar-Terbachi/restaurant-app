@@ -63,6 +63,8 @@ const ImageSlider = () => {
                 objectFit="cover"
                 objectPosition="center"
                 quality={100}
+                priority
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </Box>
             <Box

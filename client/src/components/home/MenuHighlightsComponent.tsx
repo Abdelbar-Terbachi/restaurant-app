@@ -68,6 +68,7 @@ const MenuHighlightsComponent = () => {
                   borderRadius: "1rem",
                   boxShadow: "5px 5px 5px 5px grey",
                 }}
+                sizes="(max-width: 768px) 100vw, 50vw"
               />
             </Box>
           </Grid>

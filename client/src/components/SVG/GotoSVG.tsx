@@ -11,15 +11,15 @@ const GotoSVG = () => {
       <svg
         viewBox="0 0 64 64"
         xmlns="http://www.w3.org/2000/svg"
-        stroke-width="3"
+        strokeWidth="3"
         stroke="#ffd600"
         fill="none"
       >
-        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+        <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
         <g
           id="SVGRepo_tracerCarrier"
-          stroke-linecap="round"
-          stroke-linejoin="round"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         ></g>
         <g id="SVGRepo_iconCarrier">
           <path d="M55.4,32V53.58a1.81,1.81,0,0,1-1.82,1.82H10.42A1.81,1.81,0,0,1,8.6,53.58V10.42A1.81,1.81,0,0,1,10.42,8.6H32"></path>
