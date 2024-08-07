@@ -1,3 +1,4 @@
+import ContactComponent from "@/components/contact/ContactComponent";
 import Footer from "@/components/home/Footer";
 import LocationComponent from "@/components/home/LocationComponent";
 import NavBar from "@/components/home/NavBar";
@@ -7,31 +8,7 @@ import { Box } from "@mui/material";
 import React from "react";
 
 const page = () => {
-  return (
-    <>
-      <NavBar />
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "space-between",
-          flexDirection: { xs: "column", md: "row" },
-          alignItems: "flex-start",
-          width: "100%",
-          px: "2rem",
-          py: "3rem",
-          margin: "auto",
-          maxWidth: "80vw",
-          gap: "3rem",
-        }}
-      >
-        <Informations />
-        <ReservationForm />
-      </Box>
-      <LocationComponent />
-
-      <Footer />
-    </>
-  );
+  return <ContactComponent />;
 };
 
 export default page;
